@@ -1,0 +1,29 @@
+{
+  "name": "spaceoz-poly",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "@walletconnect/web3-provider": "1.7.8",
+    "@web3auth/web3auth": "1.0.0-alpha.0",
+    "big-number": "^2.0.0",
+    "bignumber.js": "^9.1.0",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-blockies": "^1.4.1",
+    "react-dom": "18.2.0",
+    "react-toastify": "^9.0.8",
+    "react-unity-webgl": "^9.0.4",
+    "web3": "^1.7.5"
+  },
+  "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5"
+  }
+}

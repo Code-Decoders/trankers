@@ -1,0 +1,8 @@
+/.env
+/.next
+/node_modules
+/out
+/yarn-error.log
+/yarn.lock
+# Local Netlify folder
+.netlify

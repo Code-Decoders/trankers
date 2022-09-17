@@ -1,0 +1,51 @@
+.warship-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  border-radius: 20px;
+  background-color: #1a1e23;
+}
+
+.warship-image {
+  width: 237px;
+  height: 217px;
+  object-fit: contain;
+}
+
+.warship-title {
+  font-size: 18px;
+}
+
+.warship-owners {
+  display: flex;
+  gap: 0 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.warship-owner {
+  border-radius: 50%;
+}
+
+.action-bar {
+  display: flex;
+  gap: 0 10px;
+}
+
+.action-button {
+  flex: 1;
+  padding: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  background-color: #25B190;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.action-button:hover {
+  color: #fff;
+  background-color: rgba(126, 107, 239, 0.0);
+  border-radius: 10px;
+}

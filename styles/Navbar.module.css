@@ -1,0 +1,21 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: calc(12vw + 2rem);
+  background: #141316;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  justify-content: end;
+  gap: 0 0.5rem;
+  padding: 1rem;
+}
+
+.navbar-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  background-color: #25B190;
+  border-radius: 25px;
+}

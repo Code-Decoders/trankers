@@ -1,0 +1,41 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #141316;
+  color: white;
+  font-family: "ChargeVector";
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ChargeVector";
+  src: url("/fonts/charge-vector-font/ChargeVector.ttf");
+}
+
+@font-face {
+  font-family: "ChargeVector";
+  src: url("/fonts/charge-vector-font/ChargeVectorBlack.ttf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "ChargeVector";
+  src: url("/fonts/charge-vector-font/ChargeVectorBold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ChargeVector";
+  src: url("/fonts/charge-vector-font/ChargeVectorThin.ttf");
+  font-weight: 100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
