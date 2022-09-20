@@ -4,9 +4,9 @@ pragma solidity >=0.4.25 <0.9.0;
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "./SpaceOzToken.sol";
+import "./TrankersToken.sol";
 
-contract SpaceOzInventory is ERC1155, Ownable {
+contract TrankersInventory is ERC1155, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
@@ -16,7 +16,9 @@ contract SpaceOzInventory is ERC1155, Ownable {
     address token;
 
     constructor(address token_)
-        ERC1155("https://spaceoz.netlify.app/api/item/{id}.json")
+        ERC1155(
+            "ipfs://bafybeidfh3mqiao2u42n3sp3ei5fnyagztmvft7w3metmladspskqk7zoq/{id}.json"
+        )
     {
         token = token_;
     }
@@ -41,11 +43,15 @@ contract SpaceOzInventory is ERC1155, Ownable {
         if (_tokenPrices[token_id] == msg.value) {
             _mint(msg.sender, token_id, 1, "");
         } else {
-            SpaceOzToken(token).burnFrom(
+            TrankersToken(token).burnFrom(
                 msg.sender,
                 _tokenPricesInSPT[token_id]
             );
             _mint(msg.sender, token_id, 1, "");
         }
+    }
+
+    function getPrice(uint256 token_id) public view returns (uint256, uint256) {
+        return (_tokenPrices[token_id], _tokenPricesInSPT[token_id]);
     }
 }

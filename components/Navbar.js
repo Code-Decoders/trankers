@@ -1,26 +1,30 @@
-import React, { useContext, useEffect } from 'react'
-import styles from '../styles/Navbar.module.css';
-// import InventoryABI from '../build/contracts/SpacePolyInventory.json';
-import BigNumber from 'bignumber.js';
-import { metadata } from '../pages';
-import Web3State from '../lib/Web3State';
+import React, { useContext, useEffect } from "react";
+import styles from "../styles/Navbar.module.css";
+import Web3State from "../lib/Web3State";
+import { useConnectWallet } from "@web3-onboard/react";
 
 const Navbar = () => {
-    const {accounts, web3} = useContext(Web3State)
-    
-    
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
 
-    useEffect(() => {
+  if (wallet) return <></>; 
 
-    }, [])
+  return (
+    <div className={styles["navbar-container"]}>
+      <div
+        className={styles["navbar-button"]}
+        onClick={() =>
+          !connecting &&
+          (wallet ? disconnect({ label: wallet.label }) : connect())
+        }
+      >
+        {connecting
+          ? "Connecting.."
+          : wallet
+          ? wallet.accounts[0]?.address.slice(0, 10) + "..."
+          : "Connect"}
+      </div>
+    </div>
+  );
+};
 
-    return (
-        <div className={styles['navbar-container']}>
-            <div className={styles['navbar-button']} onClick={() => {
-            }}>{accounts ? accounts[0]?.slice(0, 10) + "..." : `Connect`}</div>
-    
-        </div>
-    )
-}
-
-export default Navbar
+export default Navbar;

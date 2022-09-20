@@ -1,0 +1,10 @@
+{
+  "name": "Tranker Bullet #4",
+  "description": "Tranker Bullet #4 Description",
+  "image": "https://i.imgur.com/LE7cg90.png",
+  "attributes": [
+    { "trait_type": "Type", "value": "Plasma" },
+    { "trait_type": "Damage", "value": "15" },
+    { "trait_type": "Speed", "value": "4" }
+  ]
+}

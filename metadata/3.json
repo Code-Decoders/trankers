@@ -1,0 +1,10 @@
+{
+    "name": "Tranker Tank #3",
+    "description": "Tranker Tank #3 Description",
+    "image": "https://i.imgur.com/DnyEwEZ.png",
+    "attributes": [
+      { "trait_type": "Background", "value": "Cyan" },
+      { "trait_type": "Size", "value": "Large" }
+    ]
+  }
+  

@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import Web3 from 'web3';
 import { metadata } from '..';
-import { getContractData, getTokenBalance, mintToken } from '../../lib/evmosAdaptor';
+import { getContractData, getTokenBalance, mintToken } from '../../lib/web3Adaptor';
 import Web3State from '../../lib/Web3State';
 
 const Playground = () => {
@@ -31,7 +31,7 @@ const Playground = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (web3)
+    if (web3)
             getData();
     }, [web3]);
 

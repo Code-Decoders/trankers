@@ -2,18 +2,20 @@ import React, { useEffect } from "react";
 import styles from "../styles/Warship.module.css";
 import ReactBlockies from "react-blockies";
 import BigNumber from "bignumber.js";
-// import Inventory from '../build/contracts/SpacePolyToken.json'
 import { toast } from "react-toastify";
 import { mint, mintWithToken } from "../lib/web3Adaptor";
+import { useSetChain } from "@web3-onboard/react";
+import network from "../lib/networkEnum";
 
-const Warship = ({ ship, updateOwner }) => {
-  const handleBuyWithtEVMOS = async () => {
+const Tank = ({ ship, updateOwner }) => {
+  const [{ chains, connectedChain, settingChain }, setChain] = useSetChain();
+  const handleBuyWithNative = async () => {
     await mint(ship.id, ship.price);
     updateOwner(ship.id);
   };
 
-  const handleByWithSPZ = async () => {
-    console.log("buy with spz");
+  const handleByWithTRT = async () => {
+    console.log("buy with TRT");
     await mintWithToken(ship.id);
     updateOwner(ship.id);
   };
@@ -39,15 +41,16 @@ const Warship = ({ ship, updateOwner }) => {
         </div>
       </div>
       <div className={styles["action-bar"]}>
-        <div className={styles["action-button"]} onClick={handleBuyWithtEVMOS}>
-          {ship.price / 10 ** 18} tEVMOS
+        <div className={styles["action-button"]} onClick={handleBuyWithNative}>
+          {(ship.price / 10 ** 18).toFixed(2)}{" "}
+          {connectedChain ? network[connectedChain.id].symbol : ""}
         </div>
-        <div className={styles["action-button"]} onClick={handleByWithSPZ}>
-          {ship.priceSPZ} SPT
+        <div className={styles["action-button"]} onClick={handleByWithTRT}>
+          {ship.trt} TRT
         </div>
       </div>
     </div>
   );
 };
 
-export default Warship;
+export default Tank;

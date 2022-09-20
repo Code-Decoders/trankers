@@ -1,0 +1,10 @@
+{
+    "name": "Tranker Tank #4",
+    "description": "Tranker Tank #4 Description",
+    "image": "https://i.imgur.com/r0rOTyk.png",
+    "attributes": [
+      { "trait_type": "Background", "value": "Blue" },
+      { "trait_type": "Size", "value": "Medium" }
+    ]
+  }
+  

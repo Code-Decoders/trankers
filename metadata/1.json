@@ -1,0 +1,9 @@
+{
+  "name": "Tranker Tank #1",
+  "description": "Tranker Tank #1 Description",
+  "image": "https://i.imgur.com/pliBGYQ.png",
+  "attributes": [
+    { "trait_type": "Background", "value": "Green" },
+    { "trait_type": "Size", "value": "Large" }
+  ]
+}

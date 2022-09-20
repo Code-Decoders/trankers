@@ -11,7 +11,7 @@ const Main = ({ children }) => {
       <div>
       <Head>
       <meta name = "viewport" content = "width=device-width, initial-scale=1"/>
-      <title> SpaceOz Game EVMOS </title>
+      <title> Trankers Game </title>
       </Head>
       <div style={{ display: 'flex', }}>
         <Sidebar />

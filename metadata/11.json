@@ -1,0 +1,10 @@
+{
+  "name": "Tranker Bullet #2",
+  "description": "Tranker Bullet #2 Description",
+  "image": "https://i.imgur.com/gx3VFKe.png",
+  "attributes": [
+    { "trait_type": "Type", "value": "Shell" },
+    { "trait_type": "Damage", "value": "10" },
+    { "trait_type": "Speed", "value": "2.5" }
+  ]
+}

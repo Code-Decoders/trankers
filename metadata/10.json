@@ -1,0 +1,10 @@
+{
+  "name": "Tranker Bullet #1",
+  "description": "Tranker Bullet #1 Description",
+  "image": "https://i.imgur.com/De85UjP.png",
+  "attributes": [
+    { "trait_type": "Type", "value": "Laser" },
+    { "trait_type": "Damage", "value": "20" },
+    { "trait_type": "Speed", "value": "5" }
+  ]
+}

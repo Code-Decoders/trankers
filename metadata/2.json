@@ -1,0 +1,10 @@
+{
+    "name": "Tranker Tank #2",
+    "description": "Tranker Tank #2 Description",
+    "image": "https://i.imgur.com/kWPJANW.png",
+    "attributes": [
+      { "trait_type": "Background", "value": "Red" },
+      { "trait_type": "Size", "value": "Large" }
+    ]
+  }
+  

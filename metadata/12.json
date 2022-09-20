@@ -1,0 +1,11 @@
+{
+    "name": "Tranker Bullet #3",
+    "description": "Tranker Bullet #3 Description",
+    "image": "https://i.imgur.com/AysOrv3.png",
+    "attributes": [
+      { "trait_type": "Type", "value": "Shell" },
+      { "trait_type": "Damage", "value": "20" },
+      { "trait_type": "Speed", "value": "3" }
+    ]
+  }
+  

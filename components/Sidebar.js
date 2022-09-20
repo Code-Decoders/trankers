@@ -1,7 +1,9 @@
+import { useConnectWallet, useSetChain, useWallets } from "@web3-onboard/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
-import { getTokenBalance, mint_by_owner } from "../lib/web3Adaptor";
+import network from "../lib/networkEnum";
+import { getTokenBalance, mint_by_owner, web3 } from "../lib/web3Adaptor";
 import Web3State from "../lib/Web3State";
 import styles from "../styles/Sidebar.module.css";
 
@@ -9,9 +11,13 @@ const Sidebar = () => {
   const [active, setActive] = useState(0);
   const { pathname } = useRouter();
   const [balance, setBalance] = useState("0");
-  const [sptBalance, setSptBalance] = useState("0");
-  const { web3 } = useContext(Web3State);
-
+  const [TRTBalance, setTRTBalance] = useState("0");
+  const [{ wallet }] = useConnectWallet();
+  const [{ chains, connectedChain, settingChain }, setChain] = useSetChain();
+  function toFixed(num, fixed) {
+    var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+    return num.match(re)[0];
+}
   useEffect(() => {
     switch (pathname) {
       case "/":
@@ -27,18 +33,18 @@ const Sidebar = () => {
 
   async function getBalance() {
     const balance = await getTokenBalance();
-    setSptBalance(balance.tokenBalance);
-    setBalance(balance.nativeBalance);
+    setTRTBalance(balance.tokenBalance);
+    setBalance(Object.values(wallet.accounts[0].balance)[0]);
   }
 
   useEffect(() => {
-    if (web3) {
-      // mint_by_owner()
+    if (wallet) {
+      // if (web3) mint_by_owner();
       setInterval(() => {
         getBalance();
       }, 5000);
     }
-  }, [web3]);
+  }, [wallet, web3]);
 
   return (
     <div style={{ flex: 0.18 }} className={styles["sidebar-container"]}>
@@ -87,8 +93,11 @@ const Sidebar = () => {
       </div>
       <div className={styles["sidebar-balance-container"]}>
         <div style={{ fontSize: "20px" }}>Balance</div>
-        <div>{parseFloat(balance).toFixed(2)} tEVMOS</div>
-        <div>{sptBalance} SPT</div>
+        <div>
+          {toFixed(balance, 3)}{" "}
+          {connectedChain ? network[connectedChain.id].symbol : ""}
+        </div>
+        <div>{TRTBalance} TRT</div>
       </div>
     </div>
   );

@@ -1,0 +1,10 @@
+{
+    "name": "Tranker Tank #5",
+    "description": "Tranker Tank #5 Description",
+    "image": "https://i.imgur.com/Kas96BB.png",
+    "attributes": [
+      { "trait_type": "Background", "value": "Blue" },
+      { "trait_type": "Size", "value": "Medium" }
+    ]
+  }
+  

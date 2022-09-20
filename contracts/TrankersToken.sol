@@ -4,10 +4,10 @@ pragma solidity >=0.4.25 <0.9.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract SpaceOzToken is ERC20, Ownable {
+contract TrankersToken is ERC20, Ownable {
     address public inventory;
 
-    constructor() ERC20("SpaceOzToken", "SPT") {
+    constructor() ERC20("TrankersToken", "TRT") {
         _mint(msg.sender, 20000);
     }
 
