@@ -26,5 +26,10 @@
   "devDependencies": {
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5"
+  },
+  "overrides": {
+    "joi-password-complexity": {
+      "version": "5.1.0"
+    }
   }
 }
