@@ -1,34 +1,32 @@
-# SpaceOz
+# Trankers
 
-> SpaceOz is a community-led online "play-and-earn" gaming platform created by CodeDecoders for the EVMOS Blockchain.
+> Trankers is a community-led online "play-and-earn" gaming platform created by CodeDecoders.
 
-> Shoot asteroids and enemy ships to increase your score. The more you score the more tokens you will earn.
-> With your earned SPT tokens, upgrade your ship, buy new ships and buy extra accessories for your ship.
+> Shoot turrets and enemy tanks to increase your score. The more you score the more tokens you will earn.
+> With your earned TRT tokens, upgrade your tanks, buy new tanks and buy extra accessories for your tanks.
 
  
 ## Features
 
-- Ability to buy new ships and bullet upgrades
+- Ability to buy new tanks and bullet upgrades
 - All modern browsers supported
-- Utilized the Tezos network for the In Game Token management
+- In Game Token management
 - Simple and fun to play Game
 - Multi-Ownership of NFTs
-- Light/Dark Mode Available
-- Search for specific upgrades
 - Sort the upgrades based on their popularity, strengths and price
 
 ## Deployed Smart Contracts
 
-- [The Inventory NFT Token](https://evm.evmos.dev/address/0x50826018e9e672D9467c75eA48c4802573520Ca8/transactions)
-- [The SPT In-Game-Token](https://evm.evmos.dev/address/0x4C42FE4671394c5e2e0e81AEcE913bd3a9570015/transactions)
+- [The Inventory NFT Token](https://mumbai.polygonscan.com/address/0x9393C1A97B25851D9B5a14447cc7D9cA448a211D)
+- [The TRT In-Game-Token](https://mumbai.polygonscan.com/address/0xB0b64EE64cA57aD1af311Bf5928650FE5a43b981)
 
 ## Demo
 
-Live Website (https://spaceoz-evmos.netlify.app)
+Live Website (https://trankers.netlify.app)
 
 Youtube Video Demo
 
-[![Youtube Video](https://img.youtube.com/vi/yZwc0QGiBBw/sddefault.jpg)](https://youtu.be/yZwc0QGiBBw)
+[![Youtube Video](https://img.youtube.com/vi/0HqszfAnO7o/sddefault.jpg)](https://youtu.be/0HqszfAnO7o)
 
 
 
@@ -36,7 +34,7 @@ Youtube Video Demo
 
 **Frontend:** NEXT.JS, Unity, WebGL, web3.js
 
-**Backend:** Solidity
+**Backend:** Solidity, IPFS
 ## Roadmap
 
 - [x]  Player To Earn
@@ -54,13 +52,13 @@ Youtube Video Demo
 Clone the project
 
 ```bash
-  git clone https://github.com/Code-Decoders/spaceoz-evmos
+  git clone https://github.com/Code-Decoders/trankers
 ```
 
 Go to the project directory
 
 ```bash
-  cd spaceoz-evmos
+  cd trankers
 ```
 
 Install dependencies
