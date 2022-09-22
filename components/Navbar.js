@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import styles from "../styles/Navbar.module.css";
-import Web3State from "../lib/Web3State";
 import { useConnectWallet } from "@web3-onboard/react";
 
 const Navbar = () => {

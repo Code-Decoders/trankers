@@ -1,16 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Upgrades from "../components/Upgrades";
 import Tank from "../components/Tank";
 import { getContractData, getPrices, getURI, web3 } from "../lib/web3Adaptor";
 import styles from "../styles/Home.module.css";
 import { InventoryAddress } from "./_app";
+import { useConnectWallet, useSetChain } from "@web3-onboard/react";
 
 export default function Home() {
-  const [ships, setShips] = React.useState([]);
-  const [upgrades, setUpgrades] = React.useState([]);
+  const [ships, setShips] = useState([]);
+  const [upgrades, setUpgrades] = useState([]);
+  const [{ connectedChain }] = useSetChain();
+  const [{ wallet }] = useConnectWallet();
+  const [loadPercent, setLoadPercent] = useState(0);
 
   const getData = async () => {
     console.log("getData");
@@ -22,6 +26,7 @@ export default function Home() {
     let _ships = [],
       _upgrades = [];
     for (const i = 0; i < ids.length; i++) {
+      setLoadPercent((i / ids.length) * 100);
       const id = ids[i];
       const IPFSurl = await getURI(id);
       const cid = IPFSurl.split("/")[2];
@@ -84,45 +89,59 @@ export default function Home() {
 
   useEffect(() => {
     if (web3) getData();
-  }, [web3]);
+  }, [web3, connectedChain]);
   return (
     <div className={styles["home-container"]}>
-      <div style={{ padding: "2rem" }}>
-        <h1>Trending Tanks</h1>
-        <div className={styles["horizontal-listview-container"]}>
-          <div className={styles["horizontal-listview"]}>
-            {ships.map((val, i) => (
-              <Tank key={i} ship={val} updateOwner={updateOwners} />
-            ))}
+      {ships.length == 0 || upgrades.length == 0 ? (
+        <span
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "80vh",
+          }}
+        >
+          <h1>{!wallet ? "Please Connect to your wallet" : "Loading..."}</h1>
+          {wallet && <progress value={loadPercent} max="100"></progress>}
+        </span>
+      ) : (
+        <div style={{ padding: "2rem" }}>
+          <h1>Trending Tanks</h1>
+          <div className={styles["horizontal-listview-container"]}>
+            <div className={styles["horizontal-listview"]}>
+              {ships.map((val, i) => (
+                <Tank key={i} ship={val} updateOwner={updateOwners} />
+              ))}
+            </div>
           </div>
-        </div>
-        <h1>Top Upgrades</h1>
+          <h1>Top Upgrades</h1>
 
-        <table className={styles["upgrade-table"]}>
-          <thead>
-            <tr style={{ padding: "1rem" }}>
-              <th></th>
-              <th style={{ textAlign: "left" }}>Collection</th>
-              <th>Damage</th>
-              <th>Speed</th>
-              <th>Buy</th>
-              <th>Owners</th>
-            </tr>
-          </thead>
-          <tbody>
-            {upgrades.map((val, i) => {
-              return (
-                <Upgrades
-                  key={i}
-                  index={i + 1}
-                  upgrade={val}
-                  updateOwner={updateOwners}
-                />
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+          <table className={styles["upgrade-table"]}>
+            <thead>
+              <tr style={{ padding: "1rem" }}>
+                <th></th>
+                <th style={{ textAlign: "left" }}>Collection</th>
+                <th>Damage</th>
+                <th>Speed</th>
+                <th>Buy</th>
+                <th>Owners</th>
+              </tr>
+            </thead>
+            <tbody>
+              {upgrades.map((val, i) => {
+                return (
+                  <Upgrades
+                    key={i}
+                    index={i + 1}
+                    upgrade={val}
+                    updateOwner={updateOwners}
+                  />
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
       <footer className={styles.footer}>
         <a
           href="https://github.com/Code-Decoders"

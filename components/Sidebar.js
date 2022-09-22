@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import network from "../lib/networkEnum";
 import { getTokenBalance, mint_by_owner, web3 } from "../lib/web3Adaptor";
-import Web3State from "../lib/Web3State";
 import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = () => {
@@ -15,9 +14,9 @@ const Sidebar = () => {
   const [{ wallet }] = useConnectWallet();
   const [{ chains, connectedChain, settingChain }, setChain] = useSetChain();
   function toFixed(num, fixed) {
-    var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+    var re = new RegExp("^-?\\d+(?:.\\d{0," + (fixed || -1) + "})?");
     return num.match(re)[0];
-}
+  }
   useEffect(() => {
     switch (pathname) {
       case "/":
@@ -34,17 +33,20 @@ const Sidebar = () => {
   async function getBalance() {
     const balance = await getTokenBalance();
     setTRTBalance(balance.tokenBalance);
-    setBalance(Object.values(wallet.accounts[0].balance)[0]);
+    setBalance(Object.values(wallet.accounts[0].balance ?? ["0"])[0]);
   }
 
   useEffect(() => {
     if (wallet) {
       // if (web3) mint_by_owner();
-      setInterval(() => {
+      var intervalID = setInterval(() => {
         getBalance();
       }, 5000);
     }
-  }, [wallet, web3]);
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, [wallet, web3, wallet?.chains]);
 
   return (
     <div style={{ flex: 0.18 }} className={styles["sidebar-container"]}>

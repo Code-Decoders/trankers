@@ -42,7 +42,7 @@ const Tank = ({ ship, updateOwner }) => {
       </div>
       <div className={styles["action-bar"]}>
         <div className={styles["action-button"]} onClick={handleBuyWithNative}>
-          {(ship.price / 10 ** 18).toFixed(2)}{" "}
+          {(ship.price / 10 ** 18).toFixed(network[connectedChain.id].decimals)}{" "}
           {connectedChain ? network[connectedChain.id].symbol : ""}
         </div>
         <div className={styles["action-button"]} onClick={handleByWithTRT}>

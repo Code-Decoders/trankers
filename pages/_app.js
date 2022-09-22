@@ -3,7 +3,6 @@ import "../styles/globals.css";
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Web3State from "../lib/Web3State";
 import { initWeb3Onboard } from "../lib/services";
 import {
   useAccountCenter,
@@ -77,12 +76,10 @@ function MyApp({ Component, pageProps }) {
   }, [connect]);
 
   return (
-    <Web3State.Provider value={state}>
       <Main>
         <Component {...pageProps} />
         <ToastContainer />
       </Main>
-    </Web3State.Provider>
   );
 }
 
