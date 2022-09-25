@@ -6,8 +6,9 @@ import Upgrades from "../components/Upgrades";
 import Tank from "../components/Tank";
 import { getContractData, getPrices, getURI, web3 } from "../lib/web3Adaptor";
 import styles from "../styles/Home.module.css";
-import { InventoryAddress } from "./_app";
 import { useConnectWallet, useSetChain } from "@web3-onboard/react";
+import network from "../lib/networkEnum";
+import contractAddress from "../lib/getContract";
 
 export default function Home() {
   const [ships, setShips] = useState([]);
@@ -19,7 +20,24 @@ export default function Home() {
   const getData = async () => {
     console.log("getData");
     const data = await getContractData();
-    const ids = data.map((e) => e.returnValues).map((e) => e.id);
+    const ids = [];
+    if (network[connectedChain.id].name === "Mumbai") {
+      const json = (
+        await (
+          await fetch(
+            `https://api.covalenthq.com/v1/80001/tokens/${
+              contractAddress[connectedChain.id].inventory
+            }/nft_token_ids/?quote-currency=USD&format=JSON&key=${
+              process.env.NEXT_PUBLIC_COVALENT_API_KEY
+            }`
+          )
+        ).json()
+      ).data.items;
+
+      ids = json.map((e) => e.token_id);
+    } else {
+      ids = data.map((e) => e.returnValues).map((e) => e.id);
+    }
     console.log(ids);
     ids = [...new Set(ids)];
     console.log(ids);
@@ -63,8 +81,11 @@ export default function Home() {
 
   const updateOwners = async (id) => {
     const data = await getContractData();
-    const ids = data.map((e) => e.returnValues).filter((e) => e.id == id);
-    const owners = ids.map((e) => e.to);
+    
+    const owners = data
+      .map((e) => e.returnValues)
+      .filter((e) => e.id === id)
+      .map((e) => e.to);
     console.log(owners);
     if (id in ships.map((e) => e.id)) {
       setShips((val) => {
