@@ -17,8 +17,8 @@
 
 ## Deployed Smart Contracts
 
-- [The Inventory NFT Token](https://mumbai.polygonscan.com/address/0x9393C1A97B25851D9B5a14447cc7D9cA448a211D)
-- [The TRT In-Game-Token](https://mumbai.polygonscan.com/address/0xB0b64EE64cA57aD1af311Bf5928650FE5a43b981)
+- [The Inventory NFT Token](https://moonbase.moonscan.io/address/0x9393C1A97B25851D9B5a14447cc7D9cA448a211D)
+- [The TRT In-Game-Token](https://moonbase.moonscan.io/address/0xB0b64EE64cA57aD1af311Bf5928650FE5a43b981)
 
 ## Demo
 
