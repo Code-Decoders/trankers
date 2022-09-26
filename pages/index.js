@@ -21,23 +21,8 @@ export default function Home() {
     console.log("getData");
     const data = await getContractData();
     const ids = [];
-    if (network[connectedChain.id].name === "Mumbai") {
-      const json = (
-        await (
-          await fetch(
-            `https://api.covalenthq.com/v1/80001/tokens/${
-              contractAddress[connectedChain.id].inventory
-            }/nft_token_ids/?quote-currency=USD&format=JSON&key=${
-              process.env.NEXT_PUBLIC_COVALENT_API_KEY
-            }`
-          )
-        ).json()
-      ).data.items;
 
-      ids = json.map((e) => e.token_id);
-    } else {
-      ids = data.map((e) => e.returnValues).map((e) => e.id);
-    }
+    ids = data.map((e) => e.returnValues).map((e) => e.id);
     console.log(ids);
     ids = [...new Set(ids)];
     console.log(ids);
@@ -81,7 +66,7 @@ export default function Home() {
 
   const updateOwners = async (id) => {
     const data = await getContractData();
-    
+
     const owners = data
       .map((e) => e.returnValues)
       .filter((e) => e.id === id)
