@@ -34,7 +34,7 @@ export default function Home() {
       const IPFSurl = await getURI(id);
       const cid = IPFSurl.split("/")[2];
       var token_meta = await (
-        await fetch(`https://spheron.infura-ipfs.io/ipfs/${cid}/${id}.json`)
+        await fetch(`https://gateway.pinata.cloud/ipfs/${cid}/${id}.json`)
       ).json();
       const owners = data
         .map((e) => e.returnValues)
