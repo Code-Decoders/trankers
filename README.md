@@ -13,12 +13,13 @@
 - In Game Token management
 - Simple and fun to play Game
 - Multi-Ownership of NFTs
+- Deployed on CoinEx Smart Chain
 - Sort the upgrades based on their popularity, strengths and price
 
 ## Deployed Smart Contracts
 
-- [The Inventory NFT Token](https://moonbase.moonscan.io/address/0x9393C1A97B25851D9B5a14447cc7D9cA448a211D)
-- [The TRT In-Game-Token](https://moonbase.moonscan.io/address/0xB0b64EE64cA57aD1af311Bf5928650FE5a43b981)
+- [The Inventory NFT Token](https://testnet.coinex.net/address/0xbB073a854C08b342c0Aaa2128D17d313c37a1D8C)
+- [The TRT In-Game-Token](https://testnet.coinex.net/address/0x76bCCA93D28391dc8af7A343C69ABd8221b443dB)
 
 ## Demo
 
@@ -40,7 +41,6 @@ Youtube Video Demo
 - [x]  Player To Earn
 - [x]  Multiple Owner Ownership
 - [ ]  Multiplayer Support like a open-world a arena
-- [ ]  OpensSea.io integration
 - [ ]  Security Enhancements/ Auditing in the Smart Contract
 - [ ]  More upgrades and abilities
 - [ ]  Improve gaming expereince
