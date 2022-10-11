@@ -23,11 +23,11 @@
 
 ## Demo
 
-Live Website (https://trankers-moon.netlify.app)
+Live Website (https://trankers-coinex.netlify.app/)
 
 Youtube Video Demo
 
-[![Youtube Video](https://img.youtube.com/vi/Sk7vp1R0h_k/sddefault.jpg)](https://youtu.be/Sk7vp1R0h_k)
+[![Youtube Video](https://img.youtube.com/vi/Sk7vp1R0h_k/sddefault.jpg)](https://youtu.be/txrtahTFHrw)
 
 
 
