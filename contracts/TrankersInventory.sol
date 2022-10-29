@@ -17,7 +17,7 @@ contract TrankersInventory is ERC1155, Ownable {
 
     constructor(address token_)
         ERC1155(
-            "ipfs://bafybeidfh3mqiao2u42n3sp3ei5fnyagztmvft7w3metmladspskqk7zoq/{id}.json"
+            "ipfs://bafybeihha7rjxcddj7u5wnysjafsmz2bnmvxnnblukeueokxg5immhrkxi/{id}.json"
         )
     {
         token = token_;
