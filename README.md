@@ -15,11 +15,6 @@
 - Multi-Ownership of NFTs
 - Sort the upgrades based on their popularity, strengths and price
 
-## Deployed Smart Contracts
-
-- [The Inventory NFT Token](https://mumbai.polygonscan.com/address/0x9393C1A97B25851D9B5a14447cc7D9cA448a211D)
-- [The TRT In-Game-Token](https://mumbai.polygonscan.com/address/0xB0b64EE64cA57aD1af311Bf5928650FE5a43b981)
-
 ## Demo
 
 Live Website (https://trankers-web3.netlify.app)
@@ -28,6 +23,10 @@ Youtube Video Demo
 
 [![Youtube Video](https://img.youtube.com/vi/0HqszfAnO7o/sddefault.jpg)](https://youtu.be/0HqszfAnO7o)
 
+## Deployed Smart Contracts
+
+- [The Inventory NFT Token](https://mumbai.polygonscan.com/address/0x9393C1A97B25851D9B5a14447cc7D9cA448a211D)
+- [The TRT In-Game-Token](https://mumbai.polygonscan.com/address/0xB0b64EE64cA57aD1af311Bf5928650FE5a43b981)
 
 
 ## Tech Stack
