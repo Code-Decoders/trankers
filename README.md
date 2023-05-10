@@ -5,6 +5,9 @@
 > Shoot turrets and enemy tanks to increase your score. The more you score the more tokens you will earn.
 > With your earned TRT tokens, upgrade your tanks, buy new tanks and buy extra accessories for your tanks.
 
+## Inspiration
+
+> Trankers was born out of a passion for gaming and a desire to provide a unique platform for players to engage with their favorite pastime while earning rewards. The team at CodeDecoders recognized that the gaming community was looking for a more interactive and engaging gaming experience that rewarded players for their skill and dedication. With Trankers, they created a platform where players can immerse themselves in a thrilling tank battle game while earning TRT tokens, which can be used to unlock new tanks and accessories and take their gaming experience to the next level. Trankers provides a fun and engaging way for players to connect with each other and compete for top scores, while also offering a rewarding gaming experience that keeps players coming back for more.
  
 ## Features
 
